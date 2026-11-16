@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
 
 export type SiteLanguage = "fi" | "en";
-const productionUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
-export const siteUrl = productionUrl && /^https:\/\/[^/]+$/i.test(productionUrl) ? productionUrl : "http://localhost:3000";
-export const isProductionSite = Boolean(productionUrl && /^https:\/\/[^/]+$/i.test(productionUrl));
+const demoProductionUrl = "https://barbershop-seven-orpin.vercel.app";
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : demoProductionUrl;
+const productionUrl = configuredUrl || (process.env.NODE_ENV === "production" ? vercelProductionUrl : undefined);
+export const isProductionSite = Boolean(
+  process.env.NODE_ENV === "production" &&
+  process.env.VERCEL_ENV !== "preview" &&
+  productionUrl && /^https:\/\/[^/]+$/i.test(productionUrl),
+);
+export const siteUrl = isProductionSite ? productionUrl! : "http://localhost:3000";
 export const business = {
   name: process.env.NEXT_PUBLIC_BUSINESS_NAME?.trim() || "BLADE Barbershop",
   address: process.env.NEXT_PUBLIC_BUSINESS_STREET_ADDRESS?.trim(),

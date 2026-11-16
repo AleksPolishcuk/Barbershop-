@@ -4,7 +4,7 @@ The Finnish (`/`) and English (`/en`) pages are separately rendered and have loc
 
 ## Reuse for a client
 
-1. Set `NEXT_PUBLIC_SITE_URL` to that client's public HTTPS origin and rebuild. Without it, the demo is deliberately `noindex` and the sitemap is empty, so a staging deployment cannot be indexed with localhost URLs.
+1. The current Vercel production deployment uses `VERCEL_PROJECT_PRODUCTION_URL` when available, falling back to `https://barbershop-seven-orpin.vercel.app`. For a custom domain or another client, set `NEXT_PUBLIC_SITE_URL` to the public HTTPS origin and rebuild. Local development and Vercel preview deployments remain `noindex` with an empty sitemap.
 2. Replace the BLADE demo name, visible city, prices, staff, photos, hours and booking preview with the client's verified information. Keep the site's visible content, titles and previews consistent. The site currently has only `WebSite` and `WebPage` structured data; add `LocalBusiness`/`HairSalon` data only when the actual name, address and other published details are known.
 3. Connect the booking flow to a real availability and confirmation service before taking appointments. Current slots are examples and do not create a reservation.
 4. After launch, submit `/sitemap.xml` in Search Console and Bing Webmaster Tools, inspect both language URLs and test social previews on the client's live HTTPS domain. Confirm mobile layout, image loading and conversion tracking.
