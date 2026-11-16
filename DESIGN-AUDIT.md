@@ -8,10 +8,10 @@ An editorial barbershop identity with smoked charcoal (`#121411`), warm ivory (`
 
 | Before | Change | Why it helps |
 | --- | --- | --- |
-| Service buttons were square, barber buttons were pills, and decorative arrows varied across sections. | One rectangular button system with a slight radius; booking actions use the same calendar icon. | Consistent actions are easier to recognize. |
+| Service buttons were square, barber buttons were pills, and decorative arrows varied across sections. | One rectangular button system with a slight radius; booking actions use the same calendar icon. The first booking step now uses quiet service rows and compact portrait choices rather than checkbox-like cards. | Consistent actions are easier to recognize. |
 | Service cards were pale below the photo and visually separate from the rest of the dark site. | Dark bordered cards, warmer photos, ivory text and brass price/action treatment. | Keeps the cards in the same visual language and improves hierarchy. |
 | Hero had two competing actions. | One primary Book Appointment action with a calendar icon. | Clear path into booking. |
-| Booking opened with a preselected time and only a seven-day strip. | Three explicit steps, a month calendar covering the next three months, a separate time choice and a live recap. | The date, month, service, barber and time are visible and editable. |
+| Booking opened with a preselected time and only a seven-day strip. | Three explicit steps, a month calendar covering the next three months, a separate time choice and a live recap. The progress uses service, calendar and person icons instead of numbered boxes and checkmarks. | The date, month, service, barber and time are visible and editable. |
 | Sample availability could be mistaken for a real reservation. | Sample-time label and explicit preview notices before and after contact entry. | Avoids a false confirmation while the backend is pending. |
 | Mobile and tablet headers had cramped controls or horizontal overflow. | Compact mobile actions and a collapsed tablet menu. | Preserves navigation at 320–900 px. |
 

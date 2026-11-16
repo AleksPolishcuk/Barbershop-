@@ -245,3 +245,50 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 @media(max-width:700px){
   .site-header .menu-toggle{width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid rgba(214,160,95,.48);border-radius:var(--radius);background:rgba(18,20,17,.62);color:var(--accent-light);font-size:19px;line-height:1}
 }
+
+/* Booking refinement: quiet progress, service lines and compact barber choice. */
+.booking-progress{gap:0;margin:22px 0 25px;border-bottom:1px solid rgba(241,234,222,.18)}
+.booking-progress li,.booking-progress li.current,.booking-progress li.done{position:relative;display:flex;align-items:center;gap:10px;min-height:50px;padding:6px 9px 13px;border:0;border-radius:0;background:transparent;color:#9a9d91}
+.booking-progress li:first-child{padding-left:0}
+.booking-progress li.current{color:#f3e9dc}
+.booking-progress li.done{color:#c4b9a7}
+.booking-progress li.current::after{content:"";position:absolute;height:2px;left:9px;right:9px;bottom:-1px;background:var(--accent)}
+.booking-progress li:first-child.current::after{left:0}
+.booking-progress li .booking-progress-icon,.booking-progress li.current .booking-progress-icon{width:21px;height:21px;flex:none;display:grid;place-items:center;border:0;border-radius:0;background:transparent;color:inherit}
+.booking-progress li.current .booking-progress-icon,.booking-progress li.done .booking-progress-icon{color:var(--accent-light)}
+.booking-progress li strong{font-size:12px;font-weight:500;letter-spacing:.01em}
+.booking-select fieldset{margin-bottom:20px}
+.booking-select .field-label{margin-bottom:9px}
+.booking-select .service-options{display:block;overflow:hidden;border:1px solid rgba(214,160,95,.26);border-radius:var(--radius);background:#1c201a}
+.booking-select .service-option{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;width:100%;min-height:62px;margin:0;padding:11px 17px;border:0;border-bottom:1px solid rgba(241,234,222,.12);border-radius:0;background:transparent;color:var(--paper);transition:background .2s}
+.booking-select .service-option:last-child{border-bottom:0}
+.booking-select .service-option.selected{background:#2a2b22;color:var(--paper)}
+.booking-select .service-option.selected::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.booking-select .service-option strong{font-size:15px;line-height:1.3}
+.booking-select .service-option small{font-size:12px;color:#aca99e}
+.booking-select .service-option b{font-size:18px;font-weight:600;color:var(--accent-light)}
+.booking-panel .booking-select .service-option:hover:not(.selected){background:#242820;color:var(--paper)}
+.barber-hint{color:#a9aa9e;font-size:12px;line-height:1.4;margin:-4px 0 10px}
+.booking-select .barber-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.booking-select .barber-option,.booking-select .barber-option:first-child{position:relative;grid-column:auto;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:center;min-width:0;min-height:48px;padding:7px 10px;border:1px solid rgba(241,234,222,.18);border-radius:var(--radius);background:#1c201a;color:#d9d3c8;font-size:12px;line-height:1.3;transition:border-color .2s,background .2s,color .2s}
+.booking-select .barber-option.selected{border-color:rgba(214,160,95,.82);background:#29291f;color:#f5ead8}
+.booking-select .barber-option img,.booking-select .barber-monogram{width:30px;height:30px;border-radius:3px}
+.booking-select .barber-monogram{font-size:17px}
+.booking-select .barber-option>span:nth-child(2){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.booking-select .booking-next{margin-top:3px}
+.privacy-note{margin:-5px 0 14px;color:#b7b3a8}
+.privacy-note summary{display:inline-flex;align-items:center;gap:7px;color:var(--accent-light);font-size:11px;font-weight:600;line-height:1.5;cursor:pointer;list-style:none;text-decoration:underline;text-decoration-color:rgba(214,160,95,.6);text-underline-offset:3px}
+.privacy-note summary::-webkit-details-marker{display:none}
+.privacy-note summary:focus-visible{outline:2px solid var(--accent-light);outline-offset:3px}
+.privacy-note p{font-size:11px;line-height:1.55;color:#b8b2a5;max-width:480px;margin:7px 0 0}
+@media(max-width:700px){
+  .booking-progress{margin:20px 0 22px}
+  .booking-progress li,.booking-progress li.current,.booking-progress li.done{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;min-height:58px;padding:5px 6px 11px}
+  .booking-progress li:first-child{padding-left:0}
+  .booking-progress li .booking-progress-icon,.booking-progress li.current .booking-progress-icon{width:20px;height:20px}
+  .booking-progress li strong{font-size:10px;line-height:1.25}
+  .booking-select .barber-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .booking-select .barber-option,.booking-select .barber-option:first-child{min-height:56px;grid-template-columns:28px minmax(0,1fr);gap:7px;padding:6px 7px;font-size:11px}
+  .booking-select .barber-option img,.booking-select .barber-monogram{width:28px;height:28px}
+  .booking-select .barber-option>span:nth-child(2){white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2}
+}
