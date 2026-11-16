@@ -292,3 +292,25 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
   .booking-select .barber-option img,.booking-select .barber-monogram{width:28px;height:28px}
   .booking-select .barber-option>span:nth-child(2){white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2}
 }
+
+/* The final screen is a request handoff, never a confirmed appointment. */
+.booking-request-review{min-height:0;padding:17px 0 26px}
+.booking-request-review h2{font-size:clamp(42px,5vw,62px)}
+.booking-request-review .booking-preview-card{margin-bottom:12px}
+.booking-request-status{width:100%;padding:13px 15px;border-left:2px solid var(--accent);background:#25271f;color:#e9dac5!important;font-size:13px!important;line-height:1.5}
+.booking-request-review .field-label{margin:8px 0 8px}
+.booking-request-message{display:block;width:100%;min-height:150px;resize:vertical;padding:13px 15px;border:1px solid rgba(241,234,222,.24);border-radius:var(--radius);background:#1c201a;color:#d8d1c4;font:12px/1.5 var(--sans)}
+.booking-request-message:focus-visible{outline:2px solid var(--accent-light);outline-offset:2px}
+.booking-request-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:15px}
+.booking-request-actions .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:0;padding:12px 20px;text-decoration:none;font-size:12px}
+.booking-request-actions .booking-edit{border:1px solid rgba(241,234,222,.3);background:transparent;color:var(--paper)}
+.booking-request-actions .booking-edit:hover{background:#292d25;border-color:var(--accent-light)}
+.booking-copy-feedback{min-height:18px;margin:7px 0!important;color:var(--accent-light)!important;font-size:11px!important}
+.booking-cancel-hint{margin:8px 0 4px!important;color:#bcb6aa!important;font-size:12px!important}
+.booking-cancel-link{color:var(--accent-light);font-size:12px;text-underline-offset:4px}
+@media(max-width:700px){
+  .booking-request-review{padding-top:20px}
+  .booking-request-review .booking-preview-card{grid-template-columns:1fr 1fr;gap:0 10px}
+  .booking-request-review .booking-preview-card>div:nth-last-child(2){border-bottom:0}
+  .booking-request-actions .button{flex:1 1 100%}
+}
