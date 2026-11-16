@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BLADE razor blade">
+  <rect width="64" height="64" rx="12" fill="#171614"/>
+  <path fill="#eee0ca" d="M11 20h42v7c-3.3 0-5 1.8-5 5s1.7 5 5 5v7H11v-7c3.3 0 5-1.8 5-5s-1.7-5-5-5v-7Z"/>
+  <path fill="#171614" d="M26 28h12v8H26z"/>
+  <path fill="#171614" d="M20 20h2v5h-2zm22 0h2v5h-2zM20 39h2v5h-2zm22 0h2v5h-2z"/>
+</svg>
