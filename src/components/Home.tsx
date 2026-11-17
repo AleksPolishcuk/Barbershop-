@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/lib/site";
 import { bookingWhatsAppUrl, cancellationWhatsAppUrl, formatBookingRequest } from "@/lib/booking-whatsapp";
+import { bookingProviderUrl } from "@/lib/booking-provider";
 
 type Language = "fi" | "en";
 
@@ -174,7 +175,10 @@ export default function Home({ language }: { language: Language }) {
   const reducedMotion = useReducedMotion();
   const t = content[language];
   const reveal = reducedMotion ? {} : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.18 }, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } };
-  const openBooking = (id?: string, barberName?: string) => { setBookService(id); setBookBarber(barberName); setBooking(true); };
+  const openBooking = (id?: string, barberName?: string) => {
+    if (bookingProviderUrl) { window.location.assign(bookingProviderUrl); return; }
+    setBookService(id); setBookBarber(barberName); setBooking(true);
+  };
   return <div id="top">
     <header className="site-header"><Mark/><nav className={menuOpen ? "nav-open" : ""}><a href="#services" onClick={() => setMenuOpen(false)}>{t.nav[0]}</a><a href="#experience" onClick={() => setMenuOpen(false)}>{t.nav[1]}</a><a href="#team" onClick={() => setMenuOpen(false)}>{t.nav[2]}</a><a href="#visit" onClick={() => setMenuOpen(false)}>{t.nav[3]}</a><button className="mobile-book" onClick={() => { setMenuOpen(false); openBooking(); }}>{t.book}<CalendarIcon size={17}/></button></nav><div className="header-actions"><LanguageSwitch language={language}/><button className="header-book" onClick={() => openBooking()}>{t.book}<CalendarIcon size={17}/></button></div><button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? t.close : language === "fi" ? "Avaa valikko" : "Open menu"}>{menuOpen ? "×" : "☰"}</button></header>
     <main>
